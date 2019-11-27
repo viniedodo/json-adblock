@@ -2,11 +2,11 @@
 
 let obj=JSON.parse($response.body)
 
-var i = '';
+//var i = '';
 
-for (i = 0; i < obj.data.length; i++) {
+//for (i = 0; i < obj.data.length; i++) {
 //		if(obj.data[i].["is_ads"] = true )
-			obj.data[i]  == {};
+			obj.data == [];
 }
 
 $done({body:JSON.stringify(obj)})
