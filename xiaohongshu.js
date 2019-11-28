@@ -25,9 +25,9 @@ for (var i = 0; i < obj.data.length; i++) {
 var url = $request.url;
 var body = $response.body;
 var obj = JSON.parse($response.body);
-obj['data'].forEach((element, index)=> {
-    if(element['is_ads']=="1"){ 
-          obj['data'].splice(index,1);
+obj.data.forEach((element, index)=> {
+    if(element["is_ads"]==true){ 
+          obj.data.splice(index,1);
      } 
  })
 $done({body: JSON.stringify(obj)});
