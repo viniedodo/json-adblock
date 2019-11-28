@@ -5,7 +5,7 @@ body=JSON.parse(body)
 body['data'].forEach((element, index)=> {
     if(element['is_ads']=="1"){ 
           body['data'].splice(index,1)
-          index -= 1
+          // index -= 1
      } 
  })
 $done({body:JSON.stringify(obj)})
