@@ -6,7 +6,7 @@ let bookvip = '/v3/get_book_info/';
 if (url.indexOf(bookvip) != -1) {
 	let obj = JSON.parse(body);
 	obj.result.books.is_vip = 0;
-	obj = JSON.stringify(obj);
+	body = JSON.stringify(obj);
 }
 
 $done({body});
