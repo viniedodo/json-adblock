@@ -7,8 +7,8 @@ let user = '/v1/get_user_info/';
 
 if (url.indexOf(user) != -1) {
 	let obj = JSON.parse(body);
-	body.result.userinfo.vip_status.vip_type = 1;
-	body = JSON.stringify(obj);
+	obj.result.userinfo.vip_status.vip_type = 1;
+	obj = JSON.stringify(obj);
 }
 
 
