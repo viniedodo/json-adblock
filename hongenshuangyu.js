@@ -1,6 +1,6 @@
 /*
 
-^https://bookapi.ihuman.com/v* url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Zymh.js
+^https://bookapi.ihuman.com/v* url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/hongenshuangyu.js
 
 
 
