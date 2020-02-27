@@ -1,8 +1,6 @@
 //https:\/\/api.lingumi\.com\.cn\/core-users\/userInfo\/appData url script-response-body lingumi.js
 
 var obj = JSON.parse($response.body);
-if(true)
-{
 obj.subscription = [
     {
       "expirationDate": "2030-12-27T06:47:13.360Z",
@@ -12,4 +10,4 @@ obj.subscription = [
     }
   ];
 $done({body: JSON.stringify(obj)});
-}
+
