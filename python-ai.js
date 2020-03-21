@@ -12,7 +12,7 @@ Surge & QX MITM = ws.60he.com
 
 var body = $response.body;
 var url = $request.url;
-const path = "/user.html";
+const path = "/user.htm";
 let obj = JSON.parse(body);
 if (url.indexOf(path) != -1) {
 	obj.data.vip = 3650;
