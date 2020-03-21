@@ -3,7 +3,7 @@
 python ai
 
 QX:
-^http:\/\/ws\.60he\.com\/user\.html url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/kmh.js
+^http:\/\/ws\.60he\.com\/user\.html url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/python-ai.js
 
 
 
