@@ -15,7 +15,7 @@ var url = $request.url;
 const path = "/user.html";
 let obj = JSON.parse(body);
 if (url.indexOf(path) != -1) {
-	obj["vip"] = 3650;
+	obj.data.["vip"] = 3650;
 	body = JSON.stringify(obj);
  }
 $done({body});
