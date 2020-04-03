@@ -1,5 +1,5 @@
 /*[rewrite_local]
-^https?://shared\.ivydad\.com\/api\/ url script-response-body ivydad.js
+^https?://shared\.ivydad\.com\/api\/ url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/ivydad.js
 [mitm]
 hostname = shared.ivydad.com,
  */
