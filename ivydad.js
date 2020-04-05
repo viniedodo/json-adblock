@@ -1,9 +1,11 @@
-/*[rewrite_local]
+/*
+[rewrite_local]
 ^https?://shared\.ivydad\.com\/(/api/audios/resource/) url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/ivydad.js
 [mitm]
 hostname = shared.ivydad.com,
  */
 
+/*
 if ($request.url.indexOf("/api/audios/*") != -1) {
     // 判断请求路径存在则调用函数re()调试该路径下的响应体
 
@@ -11,13 +13,16 @@ if ($request.url.indexOf("/api/audios/*") != -1) {
     // 匹配里若需用到正则的反斜杠语句像\d+、\w+时请用双反斜杆\\d+、\\w+
 }
 
+
 if ($request.url.indexOf("/api/m-course/*") != -1) {
     re('"is_listen":\\d', '"is_listen":1')
 }
 
+
 if ($request.url.indexOf("/api/audios/resource/*") != -1) {
     re('"type":\\w+@"is_unlocked":\\w+@"unlock_state":\w+@"has_access":\\w+@"is_bought":\\d+@"hasBought":\\w+@"is_listen":\\d@"is_try":\\d@"is_lock":\\d+@"is_limited":\\d+@"listen":\\d+@"course_class":\\w+', '"type":free@"is_unlocked":true@"unlock_state":all@"has_access":true@"is_bought":1@"hasBought":true@"is_listen":1@"is_try":1@"is_lock":1@"is_limited":0@"listen":1@"course_class":free')
 }
+*/
 
 function re() {
     var body = $response.body;
@@ -33,6 +38,11 @@ function re() {
         body = body.replace(reg, arguments[1]);
     }
     $done(body);
+}
+
+
+if ($request.url.indexOf("/api/audios/resource/*") != -1) {
+    re('"has_access":\\d@"is_bought":\\d', '"has_access":1@"is_bought":1')
 }
 
 // re('"isVip":\\d@"userType":\\d', '"isVip":1@"userType":2')
