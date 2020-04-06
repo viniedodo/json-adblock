@@ -28,7 +28,7 @@ if ($request.url.indexOf("/api/audios/resource/*") != -1) {
 //var url = $request.url;
 //const path = "/api/audios/resource/*";
 
-if ($request.url.indexOf("/api/audios/resource/*") != -1) {
+if ($request.url.indexOf("/api/audios/resource/book/getDetail") != -1) {
     re('"has_access":\\d@"is_bought":\\d', '"has_access":1@"is_bought":1')
 }
 
