@@ -24,13 +24,13 @@ if ($request.url.indexOf("/api/audios/resource/*") != -1) {
 }
 */
 var body = $response.body;
-var obj = JSON.parse(body);
+//var obj = JSON.parse(body);
 var url = $request.url;
 const path = "/api/audios/resource/*";
 
 
 function re() {
-
+    var obj = JSON.parse(body);
     if (arguments[0].includes("@")) {
         var regs = arguments[0].split("@");
         var strs = arguments[1].split("@");
@@ -42,7 +42,7 @@ function re() {
         var reg = newRegExp(arguments[0], "g");
         obj = obj.replace(reg, arguments[1]);
     }
-
+    body=JSON.stringify(obj);
 }
 
 
@@ -50,7 +50,7 @@ if (url.indexOf(path) != -1) {
     re('"has_access":\\d@"is_bought":\\d', '"has_access":1@"is_bought":1')
 }
 
-body=JSON.stringify(obj);
+//body=JSON.stringify(obj);
 $done({body});
 
 // re('"isVip":\\d@"userType":\\d', '"isVip":1@"userType":2')
