@@ -6,7 +6,7 @@
 
 var url = $request.url;
 var body = $response.body;
-var obj = JSON.parse($response.body);
+var obj = JSON.parse(body);
 obj.data.rows.forEach((element, index)=> {
     if(element["model_type"]=="ads"){ 
           obj.data.rows.splice(index,1);
