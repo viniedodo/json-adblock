@@ -23,7 +23,7 @@ if ($request.url.indexOf("/api/audios/resource/*") != -1) {
     re('"type":\\w+@"is_unlocked":\\w+@"unlock_state":\w+@"has_access":\\w+@"is_bought":\\d+@"hasBought":\\w+@"is_listen":\\d@"is_try":\\d@"is_lock":\\d+@"is_limited":\\d+@"listen":\\d+@"course_class":\\w+', '"type":free@"is_unlocked":true@"unlock_state":all@"has_access":true@"is_bought":1@"hasBought":true@"is_listen":1@"is_try":1@"is_lock":1@"is_limited":0@"listen":1@"course_class":free')
 }
 */
-
+/*
 function re() {
     var body = $response.body;
     var obj = JSON.parse(body);
@@ -41,7 +41,7 @@ function re() {
     body=JSON.stringify(obj);
     $done({body});
 }
-
+*/
 
 if ($request.url.indexOf("/api/audios/resource/*") != -1) {
     re('"has_access":\\d@"is_bought":\\d', '"has_access":1@"is_bought":1')
