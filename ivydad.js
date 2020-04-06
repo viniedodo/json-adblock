@@ -25,9 +25,12 @@ if ($request.url.indexOf("/api/audios/resource/*") != -1) {
 */
 //var body = $response.body;
 //var obj = JSON.parse(body);
-var url = $request.url;
-const path = "/api/audios/resource/*";
+//var url = $request.url;
+//const path = "/api/audios/resource/*";
 
+if ($request.url.indexOf("/api/audios/resource/*") != -1) {
+    re('"has_access":\\d@"is_bought":\\d', '"has_access":1@"is_bought":1')
+}
 
 function re() {
     var body = $response.body;
@@ -47,9 +50,7 @@ function re() {
 }
 
 
-if (url.indexOf(path) != -1) {
-    re('"has_access":\\d@"is_bought":\\d', '"has_access":1@"is_bought":1')
-}
+
 
 //body=JSON.stringify(obj);
 //$done({body});
