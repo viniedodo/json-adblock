@@ -25,7 +25,8 @@ if ($request.url.indexOf("/api/audios/resource/*") != -1) {
 */
 
 function re() {
-    var body = $response.body;
+    // var body = $response.body;
+    body = JSON.parse($response.body);
     if (arguments[0].includes("@")) {
         var regs = arguments[0].split("@");
         var strs = arguments[1].split("@");
@@ -37,7 +38,8 @@ function re() {
         var reg = newRegExp(arguments[0], "g");
         body = body.replace(reg, arguments[1]);
     }
-    $done(body);
+    body=JSON.stringify(body);
+    $done({body});
 }
 
 
