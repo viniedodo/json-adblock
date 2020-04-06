@@ -43,6 +43,7 @@ function re() {
         obj = obj.replace(reg, arguments[1]);
     }
     body=JSON.stringify(obj);
+    $done({body});
 }
 
 
@@ -51,7 +52,7 @@ if (url.indexOf(path) != -1) {
 }
 
 //body=JSON.stringify(obj);
-$done({body});
+//$done({body});
 
 // re('"isVip":\\d@"userType":\\d', '"isVip":1@"userType":2')
 // 在这里re('匹配', '替换')匹配有用到正则的反斜杠语句时请用双反斜杆
