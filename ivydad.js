@@ -1,9 +1,34 @@
 /*
 [rewrite_local]
-^https?://shared\.ivydad\.com\/(/api/audios/resource/) url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/ivydad.js
+^https?://shared\.ivydad\.com\/api\/ url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/ivydad.js
 [mitm]
 hostname = shared.ivydad.com,
  */
+
+
+re('"type":\\w+@"is_unlocked":\\w+@"unlock_state":\w+@"has_access":\\w+@"is_bought":\\d+@"hasBought":\\w+@"is_listen":\\d+@"is_try":\\d+@"is_lock":\\d+@"is_limited":\\d+@"listen":\\d+@"course_class":\\w+', '"type":free@"is_unlocked":true@"unlock_state":all@"has_access":true@"is_bought":1@"hasBought":true@"is_listen":1@"is_try":1@"is_lock":1@"is_limited":0@"listen":1@"course_class":free')
+
+function re() {
+    var body = $response.body;
+	var obj = JSON.parse($response.body);
+	body = JSON.stringify(obj);
+	//响应体gzip需要转换后修改
+    if (arguments[0].includes("@")) {
+        var regs = arguments[0].split("@");
+        var strs = arguments[1].split("@");
+        for (i = 0; i < regs.length; i++) {
+            var reg = new RegExp(regs[i], "g");
+            body = body.replace(reg, strs[i]);
+        }
+    } 
+	else {
+        var reg = new RegExp(arguments[0], "g");
+        body = body.replace(reg, arguments[1]);
+    }
+    $done(body);
+}
+
+
 
 /*
 if ($request.url.indexOf("/api/audios/*") != -1) {
@@ -23,32 +48,6 @@ if ($request.url.indexOf("/api/audios/resource/*") != -1) {
     re('"type":\\w+@"is_unlocked":\\w+@"unlock_state":\w+@"has_access":\\w+@"is_bought":\\d+@"hasBought":\\w+@"is_listen":\\d@"is_try":\\d@"is_lock":\\d+@"is_limited":\\d+@"listen":\\d+@"course_class":\\w+', '"type":free@"is_unlocked":true@"unlock_state":all@"has_access":true@"is_bought":1@"hasBought":true@"is_listen":1@"is_try":1@"is_lock":1@"is_limited":0@"listen":1@"course_class":free')
 }
 */
-//var body = $response.body;
-//var obj = JSON.parse(body);
-//var url = $request.url;
-//const path = "/api/audios/resource/*";
-
-re('"has_access":\\d+@"is_bought":\\d+', '"has_access":1@"is_bought":1')
-function re() {
-    var body = $response.body;
-	var obj = JSON.parse($response.body);
-    if (arguments[0].includes("@")) {
-        var regs = arguments[0].split("@");
-        var strs = arguments[1].split("@");
-        for (i = 0; i < regs.length; i++) {
-            var reg = new RegExp(regs[i], "g");
-            obj = obj.replace(reg, strs[i]);
-        }
-    } 
-	else {
-        var reg = new RegExp(arguments[0], "g");
-        obj = obj.replace(reg, arguments[1]);
-    }
-    $done({body: JSON.stringify(obj)});
-}
-
-
-
 
 //body=JSON.stringify(obj);
 //$done({body});
