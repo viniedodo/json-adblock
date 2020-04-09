@@ -22,7 +22,7 @@ function re() {
 var body = $response.body;
 var obj = JSON.parse($response.body);
 body = JSON.stringify(obj);
-	//响应体gzip需要转换后修改
+//响应体gzip需要转换后修改
 if (arguments[0].includes("@")) {
 	var regs = arguments[0].split("@");
 	var strs = arguments[1].split("@");
