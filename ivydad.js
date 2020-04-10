@@ -17,7 +17,7 @@ if ($request.url.indexOf("/api/audios/resource/") !== -1) {
     re('"type":\\w+@"is_unlocked":\\w+@"unlock_state":\w+@"has_access":\\w+@"is_bought":\\d+@"hasBought":\\w+@"is_listen":\\d+@"is_try":\\d+@"is_lock":\\d+@"is_limited":\\d+@"listen":\\d+@"course_class":\\w+@"access_type":\\w+@"type":\\w+@"vip":\\w+@"activity":\\w+@"start":\\w+@"has_started":\\d+@"is_authed":\\w+@"authed":\\w+', '"type":free@"is_unlocked":true@"unlock_state":all@"has_access":true@"is_bought":1@"hasBought":true@"is_listen":1@"is_try":1@"is_lock":1@"is_limited":0@"listen":1@"course_class":free@"access_type":free"type":free"vip":free@"activity":true@"start":true@"has_started":1@"is_authed":true@"authed":true')
 }
 
-if ($request.url.indexOf("/api/audios/resource/category/getList") !== -1) {
+if ($request.url.indexOf("/api/audios/resource/category/getList") !== -1 | $request.url.indexOf("/api/audios/batch/request") !== -1) {
     re('"course_class":\\w+@"has_unlock_num":\\d+@"unlock_node_level":\\d+@"is_bought":\\d+@"has_started":\\d+@"is_start":\\w+', '"course_class":unlocked@"has_unlock_num":99@"unlock_node_level":3@"is_bought":1@"has_started":1@"is_start":true')
 }
 
