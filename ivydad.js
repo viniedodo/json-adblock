@@ -1,6 +1,6 @@
 /*
 [rewrite_local]
-^https://shared\.ivydad\.com\/api\/(audios\/resource\/|\/m-course\/coursePackage\/courseTree) url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/ivydad.js
+^https://shared\.ivydad\.com\/api\/(audios\/resource\/|m-course\/) url script-response-body https://raw.githubusercontent.com/viniedodo/json-adblock/master/ivydad.js
 (vod\/show|(user|vod|topic|type)\/index)
 const user = "/index.php/app/ios/user/index";
 [mitm]
@@ -21,7 +21,7 @@ if ($request.url.indexOf("/api/audios/resource/category/getList") !== -1) {
     re('"course_class":\\w+@"has_unlock_num":\\d+@"unlock_node_level":\\d+@"is_bought":\\d+@"has_started":\\d+@"is_start":\\w+', '"course_class":unlocked@"has_unlock_num":99@"unlock_node_level":3@"is_bought":1@"has_started":1@"is_start":true')
 }
 
-if ($request.url.indexOf("/api/m-course/coursePackage/courseTree") !== -1) {
+if ($request.url.indexOf("/api/m-course/") !== -1) {
     re('"access_type":\\d+@"course_class":\\w+@"has_unlock_num":\\d+@"unlock_node_level":\\d+@"is_bought":\\d+@"has_started":\\d+@"is_start":\\w+@"is_listen":\\d+@"is_unlocked":\\w+@"to_be_unlock":\\w+@"is_authed":\\w+@"groupBuyActivity":\\d+', '"access_type":0@"course_class":free@"has_unlock_num":99@"unlock_node_level":3@"is_bought":1@"has_started":1@"is_start":@"is_listen":1@"is_unlocked":true@"to_be_unlock":false@"is_authed":true@"groupBuyActivity":1')
 }
 
