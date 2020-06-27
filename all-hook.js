@@ -4,14 +4,14 @@
 hostname = 123.abc.com,
  */
 
-if ($request.url.indexOf("/路径1") != -1) {
+if ($request.url.indexOf("/路径1") !== -1) {
     // 判断请求路径存在则调用函数re()调试该路径下的响应体
 
     re('匹配1@匹配2...', '替1@替2...')
     // 匹配里若需用到正则的反斜杠语句像\d+、\w+时请用双反斜杆\\d+、\\w+
 }
 
-if ($request.url.indexOf("/路径2") != -1) {
+if ($request.url.indexOf("/路径2") !== -1) {
     re('匹配1', '替1')
 }
 
