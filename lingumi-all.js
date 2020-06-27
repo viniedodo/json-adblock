@@ -6,7 +6,7 @@ if(true)
 obj["subscription"] = [
     {
       "expirationDate": "2030-12-27T06:47:13.360Z",
-      "subscriptionType": "com.lingumi.lingumichina.lessons.level1and2",
+      "subscriptionType": "com.lingumi.lingumichina.lessons.level1and2and3",
       "subscriptionStore": "Annual Plan",
       "numberOfTrialLessons": 999
     }
